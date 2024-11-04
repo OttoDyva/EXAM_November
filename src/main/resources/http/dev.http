@@ -1,0 +1,63 @@
+### Create a new trip
+POST {{url}}/trips/
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+   "name": "Trip to beach",
+    "startTime": "2024-06-01T08:00:00",
+    "endTime": "2024-06-01T16:00:00",
+    "startPosition": "København H",
+    "price": 500,
+    "category": "BEACH"
+}
+
+### Get all trips
+GET {{url}}/trips
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Get trip by id
+GET {{url}}/trips/2
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Update trip by id
+PUT {{url}}/trips/2
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+   "name": "Trip to Copenhagen",
+    "startTime": "2024-06-01T010:00:00",
+    "endTime": "2024-06-01T120:00:00",
+    "startPosition": "Lyngby Station",
+    "price": 100,
+    "category": "CITY"
+}
+
+### Delete trip by id
+DELETE {{url}}/trips/2
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Add a guide to a trip
+PUT {{url}}/trips/1/guide/1
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Populate the database with trips and guides
+GET {{url}}/trips/populate
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Get trips by category
+GET {{url}}/trips/category/CITY
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Get packing items for category
+GET {{url}}/trips/BEACH/packinglist
+
+### Get packing items weight sum
+GET {{url}}/trips/packinglist/weight
